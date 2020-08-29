@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+
+function Hi(props) {
+  console.log(props);
+  return (
+    <div>
+      <h1>
+        Hello {props.fname}! {props.lname}
+      </h1>
+      <strong>Hello arsalan!</strong>
+      <h1>Today i'm learning React</h1>
+      <h2>Fruits</h2>
+      <ul>
+        <li>Apple</li>
+        <li>Oranges</li>
+        <li>Mango</li>
+      </ul>
+
+      <h3>5 + 10 = {5 + 10}</h3>
+    </div>
+  );
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Hi fname="arsalan" lname="manzoor" />,
+  document.querySelector("#root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
